@@ -1,0 +1,13 @@
+@mixin title {
+  font-family: $main-font;
+  font-weight: 800;
+  font-size: 24px;
+  color: $black;
+}
+@mixin text {
+  font-family: $main-font;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 14px;
+  color: $black;
+}
