@@ -14,7 +14,7 @@ const fetchData = async () => {
     const value = searchInput.value.toLowerCase();
     url = `https://restcountries.com/v3.1/name/${value}`;
   } else {
-    url = "./api/data.json";
+    url = "https://restcountries.com/v3.1/all";
   }
 
   try {
