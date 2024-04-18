@@ -57,6 +57,43 @@
   display: inline-block;
   cursor: pointer;
 }
+.hero__list {
+  margin: 48px 0 45px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 74px;
+  flex-wrap: wrap;
+}
+.hero__item {
+  max-width: 264px;
+  border-radius: 5px;
+  background-color: $white;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+  &:hover {
+    box-shadow: none;
+    transition: 0.4s;
+  }
+}
+.hero__item-img img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.hero__item-title {
+  padding: 24px 0 16px 24px;
+  @include title;
+  line-height: 26px;
+  font-size: 18px;
+}
+.hero__item-text {
+  padding: 0 0 8px 24px;
+  @include text;
+}
+.hero__item-text span {
+  font-weight: 300;
+}
+.hero__item-text:last-child {
+  padding-bottom: 46px;
+}
 
 @media only screen and (max-width: 768px) {
   .hero__form {
