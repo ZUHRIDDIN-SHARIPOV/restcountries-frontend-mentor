@@ -82,6 +82,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   background-color: #fff;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
           box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
@@ -352,6 +353,38 @@ img {
   padding-bottom: 46px;
 }
 
+.loader__container {
+  padding-top: 70px;
+}
+
+.loader {
+  width: 70px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  -webkit-animation: l3 1s infinite linear;
+          animation: l3 1s infinite linear;
+}
+
+@-webkit-keyframes l3 {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes l3 {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
 @media only screen and (max-width: 768px) {
   .hero__form {
     -webkit-box-orient: vertical;
@@ -362,6 +395,14 @@ img {
         -ms-flex-align: start;
             align-items: start;
     row-gap: 40px;
+  }
+  .loader__container {
+    padding-top: 40px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .loader {
+    width: 50px;
   }
 }
 @media only screen and (max-width: 375px) {
