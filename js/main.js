@@ -13,7 +13,24 @@ const fetchData = async () => {
   if (searchInput.value.trim() && select.value === "default") {
     const value = searchInput.value.toLowerCase();
     url = `https://restcountries.com/v3.1/name/${value}`;
-  } else {
+  } else if (!searchInput.value.trim() && select.value === "Africa") {
+    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  } else if (!searchInput.value.trim() && select.value === "America") {
+    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  } else if (!searchInput.value.trim() && select.value === "Asia") {
+    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  } else if (!searchInput.value.trim() && select.value === "Europe") {
+    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  } else if (!searchInput.value.trim() && select.value === "Oceania") {
+    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  } else if (
+    (!searchInput.value.trim() && select.value === "default") ||
+    (!select.value === "Africa" &&
+      !select.value === "America" &&
+      !select.value === "Asia" &&
+      !select.value === "Europe" &&
+      !select.value === "Oceania")
+  ) {
     url = "https://restcountries.com/v3.1/all";
   }
 
@@ -30,9 +47,19 @@ fetchData();
 
 heroForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetchData();
+  select.value === "default" && fetchData();
   searchInput.value = "";
 });
+
+select.onchange = () => {
+  if (select.value === "default") {
+    searchInput.placeholder = "Search for a country…";
+    fetchData();
+  } else {
+    searchInput.placeholder = "Search doesn't work…";
+    fetchData();
+  }
+};
 
 function createCard(array) {
   heroList.innerHTML = "";
@@ -73,16 +100,53 @@ function createCard(array) {
     const region = element.region;
     const capital = element.capital !== undefined && element.capital[0];
 
-    heroList.innerHTML += `<li class="hero__item">
-    <div class="hero__item-img">
-      <img src="${flag}" alt="${alt}" />
-    </div>
-    <h2 class="hero__item-title">${title}</h2>
-    <p class="hero__item-text">
-      Population: <span>${population}</span>
-    </p>
-    <p class="hero__item-text">Region: <span>${region}</span></p>
-    <p class="hero__item-text">Capital: <span>${capital}</span></p>
-  </li>`;
+    const heroItem = document.createElement("li");
+    heroItem.classList.add("hero__item");
+    let attr = document.createAttribute("data-region");
+    attr.value = region;
+    heroItem.setAttributeNode(attr);
+
+    const heroItemImgDiv = document.createElement("div");
+    heroItemImgDiv.classList.add("hero__item-img");
+    heroItem.appendChild(heroItemImgDiv);
+
+    const heroItemImg = document.createElement("img");
+    heroItemImg.src = flag;
+    heroItemImg.alt = alt;
+    heroItemImgDiv.appendChild(heroItemImg);
+
+    const heroItemTitle = document.createElement("h2");
+    heroItemTitle.classList.add("hero__item-title");
+    heroItemTitle.innerText = title;
+    heroItem.appendChild(heroItemTitle);
+
+    const heroItemPopulation = document.createElement("p");
+    heroItemPopulation.classList.add("hero__item-text");
+    heroItemPopulation.innerText = "Population: ";
+
+    const populationSpan = document.createElement("span");
+    populationSpan.textContent = population;
+    heroItemPopulation.appendChild(populationSpan);
+    heroItem.appendChild(heroItemPopulation);
+
+    const heroItemRegion = document.createElement("p");
+    heroItemRegion.classList.add("hero__item-text");
+    heroItemRegion.innerText = "Region: ";
+
+    const regionSpan = document.createElement("span");
+    regionSpan.textContent = region;
+    heroItemRegion.appendChild(regionSpan);
+    heroItem.appendChild(heroItemRegion);
+
+    const heroItemCapital = document.createElement("p");
+    heroItemCapital.classList.add("hero__item-text");
+    heroItemCapital.innerText = "Capital: ";
+
+    const capitalSpan = document.createElement("span");
+    capitalSpan.textContent = capital;
+    heroItemCapital.appendChild(capitalSpan);
+    heroItem.appendChild(heroItemCapital);
+
+    heroList.append(heroItem);
   });
 }
