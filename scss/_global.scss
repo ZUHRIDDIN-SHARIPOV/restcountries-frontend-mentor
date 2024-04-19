@@ -43,3 +43,16 @@ img {
   height: auto;
   display: inline-block;
 }
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 255, 1) 0%,
+    rgba(0, 0, 0, 1) 77%
+  );
+}
+::-webkit-scrollbar-thumb {
+  background-color: $white;
+}

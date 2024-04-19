@@ -77,6 +77,19 @@ img {
   display: inline-block;
 }
 
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(0, 0, 255)), color-stop(77%, rgb(0, 0, 0)));
+  background: linear-gradient(0deg, rgb(0, 0, 255) 0%, rgb(0, 0, 0) 77%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
 .site-header {
   position: fixed;
   top: 0;

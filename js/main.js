@@ -28,6 +28,12 @@ const fetchData = async () => {
 
 fetchData();
 
+heroForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetchData();
+  searchInput.value = "";
+});
+
 function createCard(array) {
   heroList.innerHTML = "";
   array.forEach((element) => {
