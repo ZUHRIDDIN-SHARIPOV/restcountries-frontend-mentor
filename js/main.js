@@ -102,8 +102,8 @@ function createCard(array) {
 
     const heroItem = document.createElement("li");
     heroItem.classList.add("hero__item");
-    let attr = document.createAttribute("data-region");
-    attr.value = region;
+    let attr = document.createAttribute("data-id");
+    attr.value = title.toLowerCase();
     heroItem.setAttributeNode(attr);
 
     const heroItemImgDiv = document.createElement("div");
