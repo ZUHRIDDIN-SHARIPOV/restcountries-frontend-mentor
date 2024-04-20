@@ -1,6 +1,6 @@
 .dark {
   background-color: $dark-blue;
-  transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
   .site-header {
     background-color: $light-blue;
   }
@@ -32,7 +32,6 @@
   }
   .hero__item {
     background-color: $light-blue;
-    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
   }
   .hero__item-title {
     color: $white;
