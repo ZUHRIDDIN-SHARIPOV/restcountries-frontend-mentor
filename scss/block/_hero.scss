@@ -23,7 +23,8 @@
   padding-left: 32px;
   padding-right: 18px;
 }
-.hero__form-search-icon {
+.hero__form-search-icon svg {
+  color: $grey;
   cursor: pointer;
 }
 .hero__form-search-input {

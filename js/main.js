@@ -1,3 +1,5 @@
+const body = document.querySelector("body");
+const darkModeButton = document.querySelector(".site-header__content");
 const heroForm = document.querySelector(".hero__form");
 const searchInput = document.querySelector(".hero__form-search-input");
 const select = document.querySelector(".hero__form-select");
@@ -60,6 +62,8 @@ select.onchange = () => {
     fetchData();
   }
 };
+
+darkModeButton.onclick = () => body.classList.toggle("dark");
 
 function createCard(array) {
   heroList.innerHTML = "";

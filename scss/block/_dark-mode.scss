@@ -1,0 +1,42 @@
+.dark {
+  background-color: $dark-blue;
+  transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+  .site-header {
+    background-color: $light-blue;
+  }
+  .site-header__title {
+    color: $white;
+  }
+  .site-header__content-icon svg {
+    color: $dark-blue;
+  }
+  .site-header__content-text {
+    color: $white;
+  }
+  .hero__form-control {
+    background-color: $light-blue;
+  }
+  .hero__form-search-input {
+    background-color: $light-blue;
+  }
+  .hero__form-search-icon svg {
+    color: $white;
+  }
+  .hero__form-search-input::placeholder {
+    color: $white;
+  }
+  .hero__form-select {
+    background-color: $light-blue;
+    color: $white;
+  }
+  .hero__item {
+    background-color: $light-blue;
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  }
+  .hero__item-title {
+    color: $white;
+  }
+  .hero__item-text {
+    color: $white;
+  }
+}

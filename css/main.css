@@ -213,7 +213,8 @@ img {
   padding-right: 18px;
 }
 
-.hero__form-search-icon {
+.hero__form-search-icon svg {
+  color: #848484;
   cursor: pointer;
 }
 
@@ -425,4 +426,60 @@ img {
   .hero__form-control {
     padding: 14px 0;
   }
+}
+.dark {
+  background-color: #202c36;
+  -webkit-transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+  transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+}
+.dark .site-header {
+  background-color: #2b3844;
+}
+.dark .site-header__title {
+  color: #fff;
+}
+.dark .site-header__content-icon svg {
+  color: #202c36;
+}
+.dark .site-header__content-text {
+  color: #fff;
+}
+.dark .hero__form-control {
+  background-color: #2b3844;
+}
+.dark .hero__form-search-input {
+  background-color: #2b3844;
+}
+.dark .hero__form-search-icon svg {
+  color: #fff;
+}
+.dark .hero__form-search-input::-webkit-input-placeholder {
+  color: #fff;
+}
+.dark .hero__form-search-input::-moz-placeholder {
+  color: #fff;
+}
+.dark .hero__form-search-input:-ms-input-placeholder {
+  color: #fff;
+}
+.dark .hero__form-search-input::-ms-input-placeholder {
+  color: #fff;
+}
+.dark .hero__form-search-input::placeholder {
+  color: #fff;
+}
+.dark .hero__form-select {
+  background-color: #2b3844;
+  color: #fff;
+}
+.dark .hero__item {
+  background-color: #2b3844;
+  -webkit-transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+}
+.dark .hero__item-title {
+  color: #fff;
+}
+.dark .hero__item-text {
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
