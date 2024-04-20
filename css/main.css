@@ -449,6 +449,7 @@ img {
 }
 .dark .hero__form-search-input {
   background-color: #2b3844;
+  color: #fff;
 }
 .dark .hero__form-search-icon svg {
   color: #fff;
