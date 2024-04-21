@@ -11,27 +11,28 @@ loader_container.append(loader);
 
 const fetchData = async () => {
   let url = "";
+  const searchValue = searchInput.value.toLowerCase().trim();
+  const selectedValue = select.value;
 
-  if (searchInput.value.trim() && select.value === "default") {
-    const value = searchInput.value.toLowerCase();
-    url = `https://restcountries.com/v3.1/name/${value}`;
-  } else if (!searchInput.value.trim() && select.value === "Africa") {
-    url = `https://restcountries.com/v3.1/region/${select.value}`;
-  } else if (!searchInput.value.trim() && select.value === "America") {
-    url = `https://restcountries.com/v3.1/region/${select.value}`;
-  } else if (!searchInput.value.trim() && select.value === "Asia") {
-    url = `https://restcountries.com/v3.1/region/${select.value}`;
-  } else if (!searchInput.value.trim() && select.value === "Europe") {
-    url = `https://restcountries.com/v3.1/region/${select.value}`;
-  } else if (!searchInput.value.trim() && select.value === "Oceania") {
-    url = `https://restcountries.com/v3.1/region/${select.value}`;
+  if (searchValue && selectedValue === "default") {
+    url = `https://restcountries.com/v3.1/name/${searchValue}`;
+  } else if (!searchValue && selectedValue === "Africa") {
+    url = `https://restcountries.com/v3.1/region/${selectedValue}`;
+  } else if (!searchValue && selectedValue === "America") {
+    url = `https://restcountries.com/v3.1/region/${selectedValue}`;
+  } else if (!searchValue && selectedValue === "Asia") {
+    url = `https://restcountries.com/v3.1/region/${selectedValue}`;
+  } else if (!searchValue && selectedValue === "Europe") {
+    url = `https://restcountries.com/v3.1/region/${selectedValue}`;
+  } else if (!searchValue && selectedValue === "Oceania") {
+    url = `https://restcountries.com/v3.1/region/${selectedValue}`;
   } else if (
-    (!searchInput.value.trim() && select.value === "default") ||
-    (!select.value === "Africa" &&
-      !select.value === "America" &&
-      !select.value === "Asia" &&
-      !select.value === "Europe" &&
-      !select.value === "Oceania")
+    (!searchValue && selectedValue === "default") ||
+    (selectedValue !== "Africa" &&
+      selectedValue !== "America" &&
+      selectedValue !== "Asia" &&
+      selectedValue !== "Europe" &&
+      selectedValue !== "Oceania")
   ) {
     url = "https://restcountries.com/v3.1/all";
   }
@@ -47,11 +48,11 @@ const fetchData = async () => {
 
 fetchData();
 
-heroForm.addEventListener("submit", (e) => {
+heroForm.onsubmit = (e) => {
   e.preventDefault();
   select.value === "default" && fetchData();
   searchInput.value = "";
-});
+};
 
 select.onchange = () => {
   if (select.value === "default") {

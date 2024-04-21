@@ -481,4 +481,12 @@ img {
 }
 .dark .hero__item-text {
   color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
 }/*# sourceMappingURL=main.css.map */
