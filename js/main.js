@@ -43,6 +43,15 @@ const fetchData = async () => {
     createCard(data);
   } catch (error) {
     console.error(error.message);
+    heroList.innerHTML = `<div class="hero__error">
+    <div class="hero__error-pic">
+      <img src="./images/error-404.svg" alt="Error-404!" />
+    </div>
+    <h2 class="hero__error-title">Country not found</h2>
+    <p class="hero__error-text">
+      We can’t find the country that you are looking for... !
+    </p>
+  </div>`;
   }
 };
 

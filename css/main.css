@@ -399,6 +399,37 @@ img {
             transform: rotate(1turn);
   }
 }
+.hero__error {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__error-pic img {
+  border-radius: 11px;
+}
+
+.hero__error-title {
+  font-family: "Nunito Sans";
+  font-weight: 800;
+  font-size: 24px;
+  color: #111517;
+  font-weight: 400;
+  padding: 10px 0;
+  font-size: 58px;
+}
+
+.hero__error-text {
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 14px;
+  color: #111517;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 768px) {
   .hero__form {
     -webkit-box-orient: vertical;
@@ -414,6 +445,11 @@ img {
     padding-top: 40px;
   }
 }
+@media only screen and (max-width: 505px) {
+  .hero__error-title {
+    font-size: 40px;
+  }
+}
 @media only screen and (max-width: 420px) {
   .loader {
     width: 50px;
@@ -425,6 +461,12 @@ img {
   }
   .hero__form-control {
     padding: 14px 0;
+  }
+  .hero__error-title {
+    font-size: 32px;
+  }
+  .hero__error-text {
+    font-size: 16px;
   }
 }
 .dark {
@@ -480,6 +522,12 @@ img {
   color: #fff;
 }
 .dark .hero__item-text {
+  color: #fff;
+}
+.dark .hero__error-title {
+  color: #fff;
+}
+.dark .hero__error-text {
   color: #fff;
 }
 
