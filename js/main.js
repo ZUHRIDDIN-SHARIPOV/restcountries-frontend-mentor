@@ -43,15 +43,7 @@ const fetchData = async () => {
     createCard(data);
   } catch (error) {
     console.error(error.message);
-    heroList.innerHTML = `<div class="hero__error">
-    <div class="hero__error-pic">
-      <img src="./images/error-404.svg" alt="Error-404!" />
-    </div>
-    <h2 class="hero__error-title">Country not found</h2>
-    <p class="hero__error-text">
-      We can’t find the country that you are looking for... !
-    </p>
-  </div>`;
+    renderError404Page();
   }
 };
 
@@ -164,3 +156,33 @@ function createCard(array) {
     heroList.append(heroItem);
   });
 }
+
+const renderError404Page = () => {
+  const errorFragment = document.createDocumentFragment();
+
+  const heroError = document.createElement("div");
+  heroError.className = "hero__error";
+  errorFragment.appendChild(heroError);
+
+  const heroErrorPic = document.createElement("div");
+  heroErrorPic.className = "hero__error-pic";
+  heroError.appendChild(heroErrorPic);
+
+  const heroErrorImg = document.createElement("img");
+  heroErrorImg.src = "./images/error-404.svg";
+  heroErrorImg.alt = "Error 404!";
+  heroErrorPic.appendChild(heroErrorImg);
+
+  const heroErrorTitle = document.createElement("h2");
+  heroErrorTitle.className = "hero__error-title";
+  heroErrorTitle.innerText = "Country not found";
+  heroError.appendChild(heroErrorTitle);
+
+  const heroErrorText = document.createElement("p");
+  heroErrorText.className = "hero__error-text";
+  heroErrorText.innerText =
+    "We can’t find the country that you are looking for... !";
+  heroError.appendChild(heroErrorText);
+
+  heroList.append(errorFragment);
+};
